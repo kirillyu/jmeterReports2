@@ -1,0 +1,73 @@
+{
+	"projects": [{
+			"Project1": {
+				"namespace": "any_namespace",
+				"default_as_rt": "200",
+				"test_name": [{
+					"max": {
+						"folder_id": "1234457890",
+						"template_page": "2800821091",
+						"slack_thread": "1631708465.000600",
+						"slack_channel": "C02EHMVN09Y"
+					}
+				}, {
+					"stability": {
+						"folder_id": "1234457890",
+						"template_page": "2800821091",
+						"slack_thread": "1631708465.000600",
+						"slack_channel": "C02EHMVN09Y"
+					}
+				}, {
+					"research": {
+						"folder_id": "1234457890",
+						"template_page": "2800821091",
+						"slack_thread": "1631708465.000600",
+						"slack_channel": "C02EHMVN09Y"
+					}
+				}, {
+					"foodebug": {
+						"folder_id": "163854",
+						"template_page": "131187",
+						"slack_thread": "1631708465.000600",
+						"slack_channel": "C02EHMVN09Y"
+					}
+				}]
+			}
+		},
+		{
+			"Eshop": {
+				"namespace": "another_namespace",
+				"default_as_rt": "100",
+				"test_name": [{
+					"max": {
+						"folder_id": "1234457890",
+						"template_page": "2800821091",
+						"slack_thread": "1631708465.000600",
+						"slack_channel": "C02EHMVN09Y"
+					}
+				}, {
+					"stability": {
+						"folder_id": "1234457890",
+						"template_page": "2800821091",
+						"slack_thread": "1631708465.000600",
+						"slack_channel": "C02EHMVN09Y"
+					}
+				}, {
+					"research": {
+						"folder_id": "1234457890",
+						"template_page": "2800821091",
+						"slack_thread": "1631708465.000600",
+						"slack_channel": "C02EHMVN09Y"
+					}
+				}, {
+					"foodebug": {
+						"folder_id": "163854",
+						"template_page": "131187",
+					}
+				}]
+			}
+		}]
+			}
+		}
+	]
+}

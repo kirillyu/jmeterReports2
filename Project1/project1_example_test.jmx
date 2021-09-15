@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.4.1">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Blazemeter test plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="project_name" elementType="Argument">
+            <stringProp name="Argument.name">project_name</stringProp>
+            <stringProp name="Argument.value">${__P(project_name,Project1)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">Project1/Eshop/APItest/Debug</stringProp>
+          </elementProp>
+          <elementProp name="test_name" elementType="Argument">
+            <stringProp name="Argument.name">test_name</stringProp>
+            <stringProp name="Argument.value">${__P(test_name,foodebug)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">max/stab/stress/research/foodebug</stringProp>
+          </elementProp>
+          <elementProp name="influx_host" elementType="Argument">
+            <stringProp name="Argument.name">influx_host</stringProp>
+            <stringProp name="Argument.value">localhost</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="flux_token" elementType="Argument">
+            <stringProp name="Argument.name">flux_token</stringProp>
+            <stringProp name="Argument.value">FxO119l3-bajOCFF56y2ButEYMXpZ1ZtVb0S0v_MKlVybyIs6aBugJuRoJ_zod-leRBO4Wu_Z1WS2h0NKkX1gQ==</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="grafana_host" elementType="Argument">
+            <stringProp name="Argument.name">grafana_host</stringProp>
+            <stringProp name="Argument.value">localhost</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="grafana_token" elementType="Argument">
+            <stringProp name="Argument.name">grafana_token</stringProp>
+            <stringProp name="Argument.value">eyJrIjoid0ZxaU9EZlpiY3ZiaWZ4TEt2dHR1Z1Y3M3NlQTJOWGciLCJuIjoia3l1cmtvdl9xYWxvYWQiLCJpZCI6MX0=</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="no_report" elementType="Argument">
+            <stringProp name="Argument.name">no_report</stringProp>
+            <stringProp name="Argument.value">${__P(no_report,false)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">true - не делаем, false - делаем репорты</stringProp>
+          </elementProp>
+          <elementProp name="wiki_host" elementType="Argument">
+            <stringProp name="Argument.name">wiki_host</stringProp>
+            <stringProp name="Argument.value">qaload.atlassian.net</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="debug" elementType="Argument">
+            <stringProp name="Argument.name">debug</stringProp>
+            <stringProp name="Argument.value">${__P(debug,false)}</stringProp>
+            <stringProp name="Argument.desc">false - не делаем, true - делаем дебаг</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="version" elementType="Argument">
+            <stringProp name="Argument.name">version</stringProp>
+            <stringProp name="Argument.value">${__P(version,0.0.0)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="as_rt" elementType="Argument">
+            <stringProp name="Argument.name">as_rt</stringProp>
+            <stringProp name="Argument.value">${__P(as_rt,0)}</stringProp>
+            <stringProp name="Argument.desc">AutoStop response time</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="as_er" elementType="Argument">
+            <stringProp name="Argument.name">as_er</stringProp>
+            <stringProp name="Argument.value">${__P(as_er,0)}</stringProp>
+            <stringProp name="Argument.desc">AutoStop errors %</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="as_time" elementType="Argument">
+            <stringProp name="Argument.name">as_time</stringProp>
+            <stringProp name="Argument.value">${__P(as_time,0)}</stringProp>
+            <stringProp name="Argument.desc">AutoStop время</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="silent_mode" elementType="Argument">
+            <stringProp name="Argument.name">silent_mode</stringProp>
+            <stringProp name="Argument.value">${__P(silent_mode,false)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">true/false</stringProp>
+          </elementProp>
+          <elementProp name="influx_org" elementType="Argument">
+            <stringProp name="Argument.name">influx_org</stringProp>
+            <stringProp name="Argument.value">local</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="wiki_space" elementType="Argument">
+            <stringProp name="Argument.name">wiki_space</stringProp>
+            <stringProp name="Argument.value">TEST</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="wiki_token" elementType="Argument">
+            <stringProp name="Argument.name">wiki_token</stringProp>
+            <stringProp name="Argument.value">bG9naW40MDAwMEBnbWFpbC5jb206a0lzcE5LR3RzV2tXWFRyOTl2blNENTY4</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="slack_token" elementType="Argument">
+            <stringProp name="Argument.name">slack_token</stringProp>
+            <stringProp name="Argument.value">xoxp-2479020116423-2486993364326-2490942871765-9bba0d5fee559e75564fe7cbce1013b6</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="influx_orgID" elementType="Argument">
+            <stringProp name="Argument.name">influx_orgID</stringProp>
+            <stringProp name="Argument.value">6bd8aa0fb314e146</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="slack_for_test" elementType="Argument">
+            <stringProp name="Argument.name">slack_for_test</stringProp>
+            <stringProp name="Argument.value">https://kirillyurkovqaload.slack.com/archives/C02EHMVN09Y/p1631708465000600</stringProp>
+            <stringProp name="Argument.desc">COPY IT or join by https://join.slack.com/t/kirillyurkovqaload/shared_invite/zt-vmugmi7b-~vDk0zLTaEimqFKChVzqDw</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <SetupThreadGroup guiclass="SetupThreadGroupGui" testclass="SetupThreadGroup" testname="Test Init" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">stoptestnow</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </SetupThreadGroup>
+      <hashTree>
+        <OnceOnlyController guiclass="OnceOnlyControllerGui" testclass="OnceOnlyController" testname="Once Only Controller" enabled="true"/>
+        <hashTree>
+          <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="Include Controller" enabled="true">
+            <stringProp name="IncludeController.includepath">../template/init.jmx</stringProp>
+          </IncludeController>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">startnextloop</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">100</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="jp@gc - Dummy Sampler" enabled="true">
+          <boolProp name="WAITING">true</boolProp>
+          <boolProp name="SUCCESFULL">true</boolProp>
+          <stringProp name="RESPONSE_CODE">200</stringProp>
+          <stringProp name="RESPONSE_MESSAGE">OK</stringProp>
+          <stringProp name="REQUEST_DATA">Dummy Sampler used to simulate requests and responses
+without actual network activity. This helps debugging tests.</stringProp>
+          <stringProp name="RESPONSE_DATA">Dummy Sampler used to simulate requests and responses
+without actual network activity. This helps debugging tests.</stringProp>
+          <stringProp name="RESPONSE_TIME">${__Random(50,100)}</stringProp>
+          <stringProp name="LATENCY">${__Random(1,50)}</stringProp>
+          <stringProp name="CONNECT">${__Random(1,5)}</stringProp>
+          <stringProp name="URL"></stringProp>
+          <stringProp name="RESULT_CLASS">org.apache.jmeter.samplers.SampleResult</stringProp>
+        </kg.apc.jmeter.samplers.DummySampler>
+        <hashTree/>
+        <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="jp@gc - Dummy Sampler 2" enabled="true">
+          <boolProp name="WAITING">true</boolProp>
+          <boolProp name="SUCCESFULL">true</boolProp>
+          <stringProp name="RESPONSE_CODE">200</stringProp>
+          <stringProp name="RESPONSE_MESSAGE">OK</stringProp>
+          <stringProp name="REQUEST_DATA">Dummy Sampler used to simulate requests and responses
+without actual network activity. This helps debugging tests.</stringProp>
+          <stringProp name="RESPONSE_DATA">Dummy Sampler used to simulate requests and responses
+without actual network activity. This helps debugging tests.</stringProp>
+          <stringProp name="RESPONSE_TIME">${__Random(50,60)}</stringProp>
+          <stringProp name="LATENCY">${__Random(1,50)}</stringProp>
+          <stringProp name="CONNECT">${__Random(1,5)}</stringProp>
+          <stringProp name="URL"></stringProp>
+          <stringProp name="RESULT_CLASS">org.apache.jmeter.samplers.SampleResult</stringProp>
+        </kg.apc.jmeter.samplers.DummySampler>
+        <hashTree/>
+        <ResultCollector guiclass="SimpleDataWriter" testclass="ResultCollector" testname="Simple Data Writer" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename">${__groovy(import org.apache.jmeter.services.FileServer; FileServer.getFileServer().getBaseDir();)}${__groovy(File.separator)}result${__groovy(File.separator)}${__P(projectName,${project_name})}_Testlog_${__groovy(def Tag1=&apos;${__dateTimeConvert(${__P(TESTSTART.MS)},,dd-MM-yy_HH.mm,)}&apos;; return Tag1;)}.jtl</stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <BackendListener guiclass="BackendListenerGui" testclass="BackendListener" testname="Backend Listener" enabled="true">
+          <elementProp name="arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="influxdbMetricsSender" elementType="Argument">
+                <stringProp name="Argument.name">influxdbMetricsSender</stringProp>
+                <stringProp name="Argument.value">org.apache.jmeter.visualizers.backend.influxdb.HttpMetricsSender</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="influxdbUrl" elementType="Argument">
+                <stringProp name="Argument.name">influxdbUrl</stringProp>
+                <stringProp name="Argument.value">http://${influx_host}:8086/api/v2/write?org=${influx_org}&amp;bucket=jmeter</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="application" elementType="Argument">
+                <stringProp name="Argument.name">application</stringProp>
+                <stringProp name="Argument.value">${__P(projectName,${project_name})}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="measurement" elementType="Argument">
+                <stringProp name="Argument.name">measurement</stringProp>
+                <stringProp name="Argument.value">jmeter</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="summaryOnly" elementType="Argument">
+                <stringProp name="Argument.name">summaryOnly</stringProp>
+                <stringProp name="Argument.value">false</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="samplersRegex" elementType="Argument">
+                <stringProp name="Argument.name">samplersRegex</stringProp>
+                <stringProp name="Argument.value">.*</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="percentiles" elementType="Argument">
+                <stringProp name="Argument.name">percentiles</stringProp>
+                <stringProp name="Argument.value">99;95;90</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="testTitle" elementType="Argument">
+                <stringProp name="Argument.name">testTitle</stringProp>
+                <stringProp name="Argument.value">${__P(test_name,${test_name})}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="eventTags" elementType="Argument">
+                <stringProp name="Argument.name">eventTags</stringProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="influxdbToken" elementType="Argument">
+                <stringProp name="Argument.name">influxdbToken</stringProp>
+                <stringProp name="Argument.value">${flux_token}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="TAG_testRun" elementType="Argument">
+                <stringProp name="Argument.name">TAG_testRun</stringProp>
+                <stringProp name="Argument.value">${__groovy(def Tag1 = &apos;${__dateTimeConvert(${__P(TESTSTART.MS)},,dd-MM-yy_HH:mm,)}&apos; + &apos; &apos; + &apos;${version}&apos;.toString(); return Tag1;)}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="classname">org.apache.jmeter.visualizers.backend.influxdb.InfluxdbBackendListenerClient</stringProp>
+        </BackendListener>
+        <hashTree/>
+        <JSR223Listener guiclass="TestBeanGUI" testclass="JSR223Listener" testname="JSR223 Listener" enabled="true">
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="script">import groovy.json.StringEscapeUtils
+
+if (vars.get(&quot;debug&quot;)!=&quot;true&quot;) {
+	return true;
+}
+result = new StringBuilder();
+def Tag = &quot;${__groovy(def Tag1 = &apos;${__dateTimeConvert(${__P(TESTSTART.MS)},,dd-MM-yy_HH:mm,)}&apos;; return Tag1;)}&quot;
+
+status = &quot;Failure&quot;;
+
+if (!sampleResult.isSuccessful()) {
+result.append(&quot;test9,&quot;)
+    .append(&quot;label=&quot;)
+    .append(escapeTag(sampleResult.getSampleLabel()))
+    .append(&apos;,application=&apos;)
+    .append(&quot;${project_name}&quot;)
+    .append(&apos;,testRun=&apos;)
+    .append(Tag + &apos;\\\\ ${version}&apos;)
+    .append(&apos;,status=&apos;)
+    .append(status)
+    .append(&quot; &quot;)
+    .append(&apos;responsecode=&quot;&apos;)
+    .append(escapeValue(sampleResult.getResponseCode()))
+    .append(&apos;&quot;,url=&quot;&apos;)
+    .append(escapeValue(sampleResult.getUrlAsString()))
+    .append(&apos;&quot;,response=&quot;&apos;)
+    .append(escapeValue(sampleResult.getResponseMessage()))
+    .append(&apos;&quot;,responseData=&quot;&apos;)
+    .append(escapeValue(sampleResult.getResponseDataAsString()).replace(&quot;\&quot;&quot;, &quot;\\\\\&quot;&quot;))
+    .append(&apos;&quot; &apos;)
+    .append(sampleResult.getTimeStamp())
+    .append(&quot;000000&quot;);
+
+    
+}
+
+String escapeValue(String val) {
+    val = val.replaceAll(&quot;,&quot;, &quot;\\\\,&quot;)
+        .replaceAll(&quot; &quot;, &quot;\\\\ &quot;)
+        .replaceAll(&quot;=&quot;, &quot;\\\\=&quot;)
+        .replaceAll(&quot;\r\n&quot;, &quot; &quot;)
+        .replaceAll(&quot;\n&quot;, &quot; &quot;)
+        .trim();
+
+    return val;
+
+}
+
+String escapeTag(String val) {
+
+    val = val.replaceAll(&quot;,&quot;, &quot;\\\\,&quot;)
+        .replaceAll(&quot; &quot;, &quot;_&quot;)
+        .replaceAll(&quot;=&quot;, &quot;\\\\=&quot;)
+        .replaceAll(&quot;\r\n&quot;, &quot;_&quot;)
+        .replaceAll(&quot;\n&quot;, &quot;_&quot;)
+        .trim();
+
+    return val;
+
+}
+
+import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.params.BasicHttpParams;
+import org.apache.http.util.EntityUtils;
+
+void PostMeasurement(String metric) {
+	
+    def httpclient = new DefaultHttpClient(new BasicHttpParams());
+    def httpPost = new HttpPost();
+    httpPost.addHeader(&quot;Authorization&quot;, &quot;Token ${flux_token}&quot;);
+
+    httpPost.setURI(new URI(&quot;http://${influx_host}:8086/api/v2/write?org=${influx_org}&amp;bucket=jmeter&quot;));
+    httpPost.setEntity(new StringEntity(metric));
+    HttpResponse response = httpclient.execute(httpPost);
+    EntityUtils.consumeQuietly(response.getEntity());
+
+}
+if (result.toString()!=&quot;&quot;) {
+	PostMeasurement(result.toString());
+}
+
+
+</stringProp>
+        </JSR223Listener>
+        <hashTree/>
+        <kg.apc.jmeter.reporters.AutoStop guiclass="kg.apc.jmeter.reporters.AutoStopGui" testclass="kg.apc.jmeter.reporters.AutoStop" testname="jp@gc - AutoStop Listener" enabled="true">
+          <stringProp name="avg_response_time">${as_rt}</stringProp>
+          <stringProp name="avg_response_time_length">${as_time}</stringProp>
+          <stringProp name="error_rate">${as_er}</stringProp>
+          <stringProp name="error_rate_length">${as_time}</stringProp>
+          <stringProp name="avg_response_latency">0</stringProp>
+          <stringProp name="avg_response_latency_length">0</stringProp>
+        </kg.apc.jmeter.reporters.AutoStop>
+        <hashTree/>
+      </hashTree>
+      <PostThreadGroup guiclass="PostThreadGroupGui" testclass="PostThreadGroup" testname="Test Finishing" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">stoptestnow</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </PostThreadGroup>
+      <hashTree>
+        <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="Include Controller" enabled="true">
+          <stringProp name="IncludeController.includepath">../template/finishing.jmx</stringProp>
+        </IncludeController>
+        <hashTree/>
+      </hashTree>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
