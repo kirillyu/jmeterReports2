@@ -11,7 +11,7 @@
    </br>*В случае если на панельках в графане повисает надпись "panic: runtime error" - не паникуем, а идем и рестартуем контейнер с influxdb:*
       - docker ps
       - docker restart <influxdb_container_id>
-   </br>*После этого перезапустить тест*
+ </br>*После этого перезапустить тест*
 10. Дайте тесту пару минут, чтобы над данными можно было сделать все аггрегации и нажмите на Stop. Тест начнет рендерить графики и отправлять их в confluence
 11. Тестовый конфлюенс живет тут https://qaload.atlassian.net/wiki/spaces/TEST - для инвайта кидайте мне почту @login40k telegram
 12. Еще резльтаты упадут в тестовый slack - https://join.slack.com/t/kirillyurkovqaload/shared_invite/zt-vmugmi7b-~vDk0zLTaEimqFKChVzqDw инвайт-линк туда.
