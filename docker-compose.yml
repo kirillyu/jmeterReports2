@@ -1,0 +1,40 @@
+version: "3.9"  # optional since v1.27.0
+networks:
+  load:
+    # Use a custom driver
+    driver: bridge
+      
+services:
+  grafana:
+    image: kirillyu/jmeter-reports:grafana
+    deploy:
+        resources:
+            limits:
+              cpus: 1.0
+              memory: 3512M
+    ports:
+      - '3000:3000'
+    environment:
+      GF_RENDERING_SERVER_URL: http://renderer:8081/render
+      GF_RENDERING_CALLBACK_URL: http://grafana:3000/
+      GF_LOG_FILTERS: debug
+
+  renderer:
+    image: grafana/grafana-image-renderer:latest
+    deploy:
+        resources:
+            limits:
+              cpus: 1.0
+              memory: 3512M
+    environment:
+        RENDERING_VERBOSE_LOGGING: 'true'
+        LOG_LEVEL: debug
+        ENABLE_METRICS: 'true'
+        IGNORE_HTTPS_ERRORS: 'true'
+    ports:
+      - '8081:8081'
+
+  influx:
+    image: kirillyu/jmeter-reports:influxdb
+    ports:
+      - '8086:8086'
