@@ -38,3 +38,6 @@ services:
     image: kirillyu/jmeter-reports:influxdb
     ports:
       - '8086:8086'
+    volumes:
+      # Mount for influxdb data directory and configuration
+      - ./influxdb_data:/var/lib/influxdb2:rw
