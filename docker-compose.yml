@@ -24,7 +24,7 @@ services:
     deploy:
         resources:
             limits:
-              cpus: 1.0
+              cpus: '1.0'
               memory: 3512M
     environment:
         RENDERING_VERBOSE_LOGGING: 'true'
