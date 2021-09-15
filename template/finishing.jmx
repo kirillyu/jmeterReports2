@@ -128,7 +128,7 @@
             </elementProp>
             <elementProp name="slack_token" elementType="Argument">
               <stringProp name="Argument.name">slack_token</stringProp>
-              <stringProp name="Argument.value">xoxb-54299659264-2124518015970-BHrndr2Vo126I090H7RQZaGd</stringProp>
+              <stringProp name="Argument.value">xoxp-2479020116423-2486993364326-2490942871765-9bba0d5fee559e75564fe7cbce1013b6</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
           </collectionProp>
