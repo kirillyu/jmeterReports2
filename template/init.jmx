@@ -31,7 +31,7 @@
             <stringProp name="HTTPSampler.port">8086</stringProp>
             <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">/api/v2/write?org=samokat&amp;bucket=jmeter</stringProp>
+            <stringProp name="HTTPSampler.path">/api/v2/write?org=${influx_org}&amp;bucket=jmeter</stringProp>
             <stringProp name="HTTPSampler.method">POST</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -78,7 +78,7 @@
                 </elementProp>
               </collectionProp>
             </elementProp>
-            <stringProp name="HTTPSampler.domain">influxbot-master.samokat.io</stringProp>
+            <stringProp name="HTTPSampler.domain">telegram-bot.link</stringProp>
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
