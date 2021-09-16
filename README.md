@@ -16,3 +16,5 @@
 11. Тестовый конфлюенс живет тут https://qaload.atlassian.net/wiki/spaces/TEST - для инвайта кидайте мне почту @login40k telegram
 12. Еще резльтаты упадут в тестовый slack - https://join.slack.com/t/kirillyurkovqaload/shared_invite/zt-vmugmi7b-~vDk0zLTaEimqFKChVzqDw инвайт-линк туда.
 
+Общие моменты:
+- В тренды тесты попадают только тогда когда они соответствуют выставленным требованиям по времени, выставляется дашборде Test Trends
