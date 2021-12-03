@@ -18,3 +18,25 @@
 
 Общие моменты:
 - В тренды тесты попадают только тогда когда они соответствуют выставленным требованиям по времени, выставляется дашборде Test Trends
+
+Eng:
+# jmeterReports2
+What should I do to try it?
+1. Download JMeter - needed version is 5.4.1 (test on it). https://dlcdn.apache.org//jmeter/binaries/apache-jmeter-5.4.1.zip
+2. You need the Docker in machine. I am using this for win https://www.docker.com/products/docker-desktop
+3. Clone current repo
+4. Copy the jmeter folder from repo to unzipped jmeter distr from #1 (replace files)
+5. Root folder contains projects (ex. Project1) and folder template - the should be in one directory layer level (close to each other)
+6. Execute "docker-compose up -d" from root. (Req. 7Gb RAM, 2 vCPU but you can change it in .yml)
+7. Open Jmeter, and there open /Project1/project1_example_test.jmx - it is already done test plan. You can start it.
+8. You can see online results in Grafana http://localhost:3000 - log and pass: admin/1234qwer (same for influx)
+   </br>*If you see this message in Grafana panels "panic: runtime error" - don't panic, just go and restart container with influxdb:*
+      - docker ps
+      - docker restart <influxdb_container_id>
+      - *Rerun your test*
+10. Wait few minutes after start. Click on Stop button and then it will start to render graphs and push it to confluence
+11. Test Confluence is here https://qaload.atlassian.net/wiki/spaces/TEST - for invatation write to me @login40k telegram
+12. Also there is test slack - https://join.slack.com/t/kirillyurkovqaload/shared_invite/zt-vmugmi7b-~vDk0zLTaEimqFKChVzqDw invitation link. If doesn't work writ eto me)
+
+PS:
+- Tests pushing to trends only when themselfs durations is more then requrements in dashbord Test Trends
